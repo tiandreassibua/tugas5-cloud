@@ -16,7 +16,7 @@ services:
   wp:
     image: wordpress:latest
     environment:
-      - WORDPRESS_DB_HOST=mariadb
+      - WORDPRESS_DB_HOST=db
       - WORDPRESS_DB_USER=${DB_USERNAME}
       - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
       - WORDPRESS_DB_NAME=${DB_NAME}
@@ -42,9 +42,9 @@ services:
   pma:
     image: phpmyadmin:latest
     environment:
-      - PMA_HOST=mariadb
-      - PMA_USER=cloud
-      - PMA_PASSWORD=cloud-pass
+      - PMA_HOST=db
+      - PMA_USER=${DB_USERNAME}
+      - PMA_PASSWORD=${DB_PASSWORD}
     depends_on:
       - db
     networks:
