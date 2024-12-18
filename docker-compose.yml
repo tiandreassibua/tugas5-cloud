@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   proxy:
@@ -10,8 +10,6 @@ services:
     depends_on:
       - wp
       - pma
-    networks:
-      - cloud-network
 
   wp:
     image: wordpress:latest
@@ -50,5 +48,5 @@ services:
       - "8081:80"
 
 volumes:
-  wordpress-data:
-  mariadb-data:
+  wordpress:
+  db:
