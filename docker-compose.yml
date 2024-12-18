@@ -28,7 +28,7 @@ services:
       - cloud-network
 
   db:
-    image: mariadb:latest
+    image: mariadb:10.6
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - MYSQL_DATABASE=${DB_NAME}
@@ -40,7 +40,7 @@ services:
       - cloud-network
 
   pma:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin:latest
     environment:
       - PMA_HOST=mariadb
       - PMA_USER=cloud
